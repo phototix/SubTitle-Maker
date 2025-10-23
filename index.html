@@ -169,6 +169,10 @@
         
         <button id="process-btn">Process Subtitles</button>
         
+        <div class="subtitle-line">
+            <div class="text-line" id="processed"></div>
+        </div>
+        
         <div class="progress-bar">
             <div class="progress" id="progress"></div>
         </div>
@@ -194,6 +198,7 @@
             const resultDiv = document.getElementById('result');
             const progressBar = document.getElementById('progress');
             const movieTitle = document.getElementById('movieTitle');
+            const processed = document.getElementById('processed');
             
             let processedSubtitles = '';
             
@@ -298,6 +303,8 @@
                     
                     // Add to result
                     processedSubtitles += `${result}\n`;
+
+                    processed.textContent = processedSubtitles;
                     
                     // Update result display
                     resultDiv.textContent = processedSubtitles;
